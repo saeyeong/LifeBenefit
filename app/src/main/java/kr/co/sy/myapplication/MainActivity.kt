@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       // val builder = AlertDialog.Builder(this)
-
         button= findViewById(R.id.button)
         button?.setOnClickListener(this)
 
@@ -30,7 +28,7 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
     override fun onClick(v: View?) {
 
         Toast.makeText(this,"로그인 해라",Toast.LENGTH_LONG).show()
-        val nextIntent = Intent(this, Main2Activity::class.java)
+        val nextIntent = Intent(this, BottomNaviActivity::class.java)
         startActivity(nextIntent)
     }
 
