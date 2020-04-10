@@ -1,4 +1,4 @@
-package kr.co.sy.myapplication
+package kr.co.sy.myapplication.Fragmanet
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-
-
+import kr.co.sy.myapplication.R
 
 
 class BlankFragment1 : Fragment() {
