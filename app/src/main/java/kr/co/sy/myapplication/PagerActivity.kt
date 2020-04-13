@@ -12,22 +12,22 @@ import kr.co.sy.myapplication.databinding.ActivityPagerBinding
 class PagerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPagerBinding
     var tabAdapter: TabAdapter? = null
-    var pager: ViewPager? = null
-    var getCount: Int? = null
-    var tab: TabLayout? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_pager)
+        init()
+    }
 
-        getCount = 5
-        tabAdapter = TabAdapter(supportFragmentManager, getCount!!)
 
-        pager = binding.container
-        pager?.adapter = tabAdapter
+    fun init() { //기타 필요한 초기값들을 생성하는 메서드
+        tabAdapter = TabAdapter(supportFragmentManager)
+        binding.container.adapter = tabAdapter
+        binding.tabLayout.setupWithViewPager(binding.container)
+    }
 
-        tab = binding.tabLayout
-        tab?.setupWithViewPager(pager)
-
+    override fun onStart() {
+        super.onStart()
     }
 }
