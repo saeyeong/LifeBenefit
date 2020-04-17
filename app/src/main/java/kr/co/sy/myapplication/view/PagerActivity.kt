@@ -1,8 +1,9 @@
-package kr.co.sy.myapplication
+package kr.co.sy.myapplication.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import kr.co.sy.myapplication.R
 import kr.co.sy.myapplication.adapter.TabAdapter
 import kr.co.sy.myapplication.databinding.ActivityPagerBinding
 
@@ -13,7 +14,9 @@ class PagerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_pager)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.activity_pager
+        )
         init()
     }
 

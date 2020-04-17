@@ -1,8 +1,12 @@
-package kr.co.sy.myapplication
+package kr.co.sy.myapplication.model.entity
 
-class NewsModel(
+data class NewsEntity(
     val title:String,
     val description:String,
     val keyword1:String,
     val keyword2:String,
-    val keyword3:String)
+    val keyword3:String){
+
+
+
+}

@@ -1,4 +1,4 @@
-package kr.co.sy.myapplication
+package kr.co.sy.myapplication.adapter.holder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
