@@ -6,26 +6,26 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import kr.co.sy.myapplication.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() ,View.OnClickListener{
+class MainActivity : AppCompatActivity() ,View.OnClickListener {
 
-    var button :Button?= null
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        button= findViewById(R.id.button)
-        button?.setOnClickListener(this)
-
-
+        binding.button.setOnClickListener(this)
 
     }
 
     override fun onClick(v: View?) {
 
         Toast.makeText(this,"로그인 해라",Toast.LENGTH_LONG).show()
-        val nextIntent = Intent(this, PagerActivity::class.java)
+        val nextIntent = Intent(this, LoginActivity::class.java)
         startActivity(nextIntent)
     }
 
