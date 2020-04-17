@@ -1,4 +1,4 @@
-package kr.co.sy.myapplication
+package kr.co.sy.myapplication.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

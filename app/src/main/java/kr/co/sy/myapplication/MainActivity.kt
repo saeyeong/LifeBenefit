@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener{
         button= findViewById(R.id.button)
         button?.setOnClickListener(this)
 
+
+
     }
 
     override fun onClick(v: View?) {
