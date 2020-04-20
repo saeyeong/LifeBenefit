@@ -26,7 +26,9 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        if(ContextUtil().getUserToken(applicationContext).equals("")) {
+       // if(ContextUtil().getUserToken(applicationContext).equals("")) { //토큰이 Null일 때는 검사를 안 하나용?
+        if(ContextUtil().getUserToken(applicationContext).isNullOrEmpty()) {
+            //그리고 스트링 empty 검사는 isEmpty라는 메서드가 있고  코틀린에서는
             val nextIntent = Intent(this, LoginActivity::class.java)
             startActivity(nextIntent)
         } else {
@@ -34,5 +36,7 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
             val nextIntent = Intent(this, PagerActivity::class.java)
             startActivity(nextIntent)
         }
+
+        //여기서도 마찬가지로 기존 액티비티는 계속 살려놓는 정책인가요?
     }
 }
