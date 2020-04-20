@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import kr.co.sy.myapplication.R
 import kr.co.sy.myapplication.databinding.ActivityMainBinding
+import kr.co.sy.myapplication.utils.ContextUtil
 
 class MainActivity : AppCompatActivity() ,View.OnClickListener {
 
@@ -25,10 +26,13 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-
-        Toast.makeText(this,"로그인 해라",Toast.LENGTH_LONG).show()
-        val nextIntent = Intent(this, LoginActivity::class.java)
-        startActivity(nextIntent)
+        if(ContextUtil().getUserToken(applicationContext).equals("")) {
+            val nextIntent = Intent(this, LoginActivity::class.java)
+            startActivity(nextIntent)
+        } else {
+            Toast.makeText(applicationContext, ContextUtil().getUserToken(applicationContext), Toast.LENGTH_LONG).show()
+            val nextIntent = Intent(this, PagerActivity::class.java)
+            startActivity(nextIntent)
+        }
     }
-
 }

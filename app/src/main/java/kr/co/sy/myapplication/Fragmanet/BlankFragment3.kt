@@ -5,39 +5,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import kr.co.sy.myapplication.R
+import kr.co.sy.myapplication.databinding.FragmentBlank3Binding
 
 
 class BlankFragment3 : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    var textTitleView: TextView? = null
-    var textContentsView: TextView? = null
-    lateinit var layoutView: View
+    lateinit var binding : FragmentBlank3Binding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        init()
+    }
+
+    fun init() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
 
-            textTitleView = layoutView.findViewById(R.id.text_title)
-            textContentsView = layoutView.findViewById(R.id.text_contents)
-
-            textTitleView?.text = param1
-            textContentsView?.text = param2
+            binding.textTitle.text = param1
+            binding.textContents.text = param2
         }
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        layoutView = inflater.inflate(R.layout.fragment_blank3, container, false)
-        return layoutView
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_blank3,container,false)
+        return binding.root
     }
 
     companion object {
